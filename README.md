@@ -1,4 +1,4 @@
-# BingSimpleApi
+# BingAdsSimpleApi
 
 Bing's SOAP API is a complicated and powerful beast with a steep learning curve that allows you access to everything in Bing. There's no official Ruby SDK so if you're working in Ruby you have to mess directly with SOAP. This gem is neither powerful nor complete, far from both, but is instead provides access to a handful of the most common tasks with a very simple ruby like interface.
 
@@ -9,8 +9,8 @@ This gem is very alpha. You probably don't want to use it unless you're actively
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'bing-simple-api', {
-  git: 'https://github.com/goldstar/bing-simple-api.git',
+gem 'bing-ads-simple-api', {
+  git: 'https://github.com/goldstar/bing-ads-simple-api.git',
   ref: 'master'
 }
 ```
@@ -23,22 +23,25 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install bing-simple-api
+    $ gem install bing-ads-simple-api
 
 ## Usage
 
 ### Congifiguration
 
 ```ruby
-require 'bing_simple_api'
+require 'bing_ads_simple_api'
 
-BingSimpleApi.bing_authentication = {
-
+BingAdsSimpleApi.authentication = {
+  client_id:           '00000000-0000-0000-0000-000000000000', # register your app with microsoft to get an id for your app/client
+  customer_account_id: '00000000', # get this from the URLs of the bing web UI
+  customer_id: '0000000', # get this from the URLs of the bing web UI
+  authentication_token: '....',  # Oauth access_token, ignored if using a refresh token
+  refresh_token: '...' # fetches a new authentication_token as needed
 }
-
 ```
 
-See the Bing API documentation on the configuring authentication.
+Access tokens expire after 60 minutes.  Alternatively, you can pass in a `refresh_token` and a new access_token will be fetched as needed.  See the Bing API documentation for more details on the configuring authentication.
 
 
 ## Development
@@ -49,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/goldstar/bing-simple-api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/goldstar/bing-ads-simple-api.
 
 ## License
 

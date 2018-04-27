@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "bing_simple_api"
+require "bing_ads_simple_api"
 require 'pry'
 
 RSpec.configure do |config|
