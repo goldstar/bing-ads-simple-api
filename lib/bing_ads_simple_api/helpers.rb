@@ -10,18 +10,18 @@ module BingAdsSimpleApi
       def tns(obj)
         if obj.is_a?(Hash)
           obj.to_a.map{ |k,v|
-            k = tns(k)
+            k = tns(k) unless k.to_s.match(/!$/)
             v = tns(v) if v.is_a?(Hash) || v.is_a?(Array) || v.is_a?(Date)
             [ k,v ]
           }.to_h
         elsif obj.is_a?(Array)
           obj.to_a.map{ |x| x.is_a?(Hash) ? tns(x) : x }
         elsif obj.is_a?(Date)
-          {
+          tns({
             day: obj.day,
             month: obj.month,
             year: obj.year
-          }
+          })
         elsif obj.is_a?(Symbol)
           "tns:#{camelize(obj)}"
         else
@@ -29,6 +29,7 @@ module BingAdsSimpleApi
         end
       end
 
+      # digs through nested hashes looking for a key/symbol
       def dig(hash, symbol)
         hash.each_pair do |k,v|
           return v if k == symbol
@@ -42,7 +43,7 @@ module BingAdsSimpleApi
         nil
       end
     end
-    
+
     def self.included(receiver)
       receiver.extend         ClassAndInstanceMethods
       receiver.send :include, ClassAndInstanceMethods

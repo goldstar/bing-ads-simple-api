@@ -1,7 +1,7 @@
 require 'bing_ads_simple_api/exceptions'
 require 'bing_ads_simple_api/helpers'
 require 'bing_ads_simple_api/reports'
-require 'bing_ads_simple_api/service'
+require 'bing_ads_simple_api/services'
 require 'bing_ads_simple_api/version'
 require 'net/http'
 require 'json'

@@ -1,9 +1,9 @@
-RSpec.describe BingAdsSimpleApi::Service do
+RSpec.describe BingAdsSimpleApi::Services::Reporting do
   before do
     BingAdsSimpleApi.authentication = {}
   end
 
-  subject{ described_class.new("https://example.com/wsdl") }
+  subject{ described_class.new }
 
   describe "initialize" do
     it "should create a savon client" do
