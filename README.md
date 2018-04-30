@@ -27,7 +27,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Congifiguration
+### Configuration
 
 ```ruby
 require 'bing_ads_simple_api'
@@ -43,6 +43,15 @@ BingAdsSimpleApi.authentication = {
 
 Access tokens expire after 60 minutes.  Alternatively, you can pass in a `refresh_token` and a new access_token will be fetched as needed.  See the Bing API documentation for more details on the configuring authentication.
 
+### Reporting
+
+Some predefined ready to run reports are `lib/bing_ads_simple_api/reports`. You can use them as examples to create your own.
+
+```ruby
+  BingAdsSimpleApi::Reports::DailyAdPerformanceReport.new().to_a # returns an array of hashes for each ad that ran yesterday
+  BingAdsSimpleApi::Reports::DailyAdPerformanceReport.new(Date.new(2018,1,1)).to_a # returns an array of hashes for each ad that ran on Jan 1
+  BingAdsSimpleApi::Reports::DailyAdPerformanceReport.new(Date.new(2018,1,1)..Date.new(2018,1,31)).to_a # returns an array of hashes for each ad that ran during the time range
+```
 
 ## Development
 
