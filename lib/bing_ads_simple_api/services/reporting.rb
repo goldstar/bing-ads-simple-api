@@ -28,6 +28,7 @@ module BingAdsSimpleApi
         status = dig(response.body, :status)
         if status == SUCCESS
           download_url = dig(response.body, :report_download_url)
+          # This can mean that the report was empty
           raise ReportUrlNotFoundError.new(response.body.to_s) if download_url.nil?
           return download_url
         elsif status == ERROR

@@ -12,16 +12,17 @@ module BingAdsSimpleApi
         return_only_complete_data: 'true',
         aggregation: 'Daily',
         columns: %w[AdId TimePeriod AdGroupId AdGroupName CampaignId
-          CampaignName Impressions Clicks Conversions Spend FinalUrl],
+          CampaignName Impressions Clicks Conversions Spend FinalUrl
+          Path1 Path2 TitlePart1 TitlePart2 AdDescription AdGroupStatus
+          CampaignStatus Revenue],
         time: {
-          custom_date_range_end: Date.today-1,
-          custom_date_range_start: Date.today-1
+          predefined_time: 'Yesterday'
         }
       )
 
       date_columns(:time_period)
       integer_columns(:ad_id, :ad_group_id, :campaign_id, :impressions, :clicks)
-      float_columns(:conversions, :spend)
+      float_columns(:conversions, :spend, :revenue)
 
       def initialize(date_or_range = nil)
         return if date_or_range.nil?
