@@ -13,7 +13,9 @@ module BingAdsSimpleApi
         @client = Savon.client(
           wsdl:        wsdl,
           soap_header: BingAdsSimpleApi.authentication,
-          log_level:  :info,
+          log_level:  :debug,
+          log: true,
+          pretty_print_xml: true,
           namespaces: {
             'xmlns:arr' => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
             'xmlns:i'   => 'http://www.w3.org/2001/XMLSchema-instance'

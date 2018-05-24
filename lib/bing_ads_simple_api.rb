@@ -1,3 +1,5 @@
+require 'bing_ads_simple_api/base'
+require 'bing_ads_simple_api/campaign'
 require 'bing_ads_simple_api/exceptions'
 require 'bing_ads_simple_api/helpers'
 require 'bing_ads_simple_api/reports'
