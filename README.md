@@ -41,7 +41,7 @@ BingAdsSimpleApi.authentication = {
 }
 ```
 
-Access tokens expire after 60 minutes.  Alternatively, you can pass in a `refresh_token` and a new access_token will be fetched as needed.  See the Bing API documentation for more details on the configuring authentication.
+Access tokens expire after 60 minutes.  Alternatively, you can pass in a `refresh_token` and a new access_token will be fetched as needed. This refresh token will last 90 days. Use the script `ruby bing_auth_token.rb` to generate a refresh token. See the Bing API documentation for more details on [configuring authentication](https://docs.microsoft.com/en-us/bingads/guides/authentication-oauth?view=bingads-12#authorizationcode).
 
 ### Reporting
 
