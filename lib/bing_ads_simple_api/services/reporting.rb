@@ -8,7 +8,7 @@ module BingAdsSimpleApi
       include Helpers
 
       def wsdl
-        "https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V12/ReportingService.svc?singleWsdl"
+        "https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V13/ReportingService.svc?singleWsdl"
       end
 
       def submit_generate_report(message)

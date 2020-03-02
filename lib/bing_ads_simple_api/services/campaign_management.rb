@@ -5,7 +5,7 @@ module BingAdsSimpleApi
       include Helpers
 
       def wsdl
-        "https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v12/CampaignManagementService.svc?singleWsdl"
+        "https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v13/CampaignManagementService.svc?singleWsdl"
       end
 
 
