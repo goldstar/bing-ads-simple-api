@@ -12,7 +12,6 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{A very small (and incomplete) wrapper for the Bing Api }
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = "https://github.com/goldstar/bing-ads-simple-api"
-  spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
