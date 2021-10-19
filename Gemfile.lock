@@ -63,10 +63,10 @@ PLATFORMS
 
 DEPENDENCIES
   bing-ads-simple-api!
-  bundler (~> 1.16)
+  bundler (~> 1.17.2)
   pry
   rake (~> 10.0)
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.17.3
